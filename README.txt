@@ -1,2 +1,2 @@
-NAVIGATION FIX v8
-Upload all extracted files to the repository root, replacing index.html and sw.js. Keep icons/ and manifest.webmanifest. No app.js is needed: JavaScript is now embedded in index.html to prevent mismatched cached versions. After GitHub Pages deploys, open the site in Chrome with ?v=8 and refresh. If the installed app is still stale, clear site data or reinstall it.
+BAT SPEED UPDATE v9
+Adds ESTIMATED BAT SPEED NEEDED: 55–65 MPH as an illustrative training target for a 14-year-old. This is not calculated from pitch speed and is not a minimum required to hit. Preserves saved settings and navigation. Upload the contents to your GitHub Pages repository root. After deployment open your site with ?v=9 and refresh.
