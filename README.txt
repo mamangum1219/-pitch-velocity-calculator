@@ -1,6 +1,2 @@
-Pitch Velocity Calculator - two-page edition
-
-Page 1: Calculator. Use the red Saved Settings & Reference button to open Page 2.
-Page 2: Saved Settings, Quick Reference and About. Use Back to Calculator to return.
-
-Upload the CONTENTS of this ZIP to the root of your GitHub Pages repository, replacing existing files. Preserve the icons folder. Wait for deployment, then refresh the site. Offline cache updated to v6.
+NAVIGATION FIX v8
+Upload all extracted files to the repository root, replacing index.html and sw.js. Keep icons/ and manifest.webmanifest. No app.js is needed: JavaScript is now embedded in index.html to prevent mismatched cached versions. After GitHub Pages deploys, open the site in Chrome with ?v=8 and refresh. If the installed app is still stale, clear site data or reinstall it.
