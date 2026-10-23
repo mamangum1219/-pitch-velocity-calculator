@@ -20,9 +20,21 @@ function renderSaved(){const ul=$('saved');ul.replaceChildren();if(!saved.length
 $('save').addEventListener('click',()=>{if(!valid())return;const{s,d}=result();saved.unshift({s,d});saved=saved.slice(0,20);persist();renderSaved();status('Setting saved on this device.')});
 $('manage').addEventListener('click',()=>{if(!saved.length){status('No saved settings to manage.');return}if(confirm('Delete all saved settings on this device?')){saved=[];persist();renderSaved();status('Saved settings cleared.')}});
 const tbody=$('referenceRows');for(const s of [45,50,55,60,65,70]){const tr=document.createElement('tr');for(const value of [s,(s*60.5/40).toFixed(1),(40/(s*5280/3600)).toFixed(3)]){const td=document.createElement('td');td.textContent=value;tr.append(td)}tbody.append(tr)}
-function showPage(page){const details=page==='details';$('page-calculator').hidden=details;$('page-details').hidden=!details;document.querySelectorAll('.nav button').forEach(b=>{const active=b.dataset.page===page;b.classList.toggle('selected',active);b.setAttribute('aria-current',active?'page':'false')});window.scrollTo({top:0,behavior:'instant'})}
-$('nextPage').addEventListener('click',()=>showPage('details'));
-$('backPage').addEventListener('click',()=>showPage('calculator'));
+function showPage(page){
+  if(!['calculator','saved','reference'].includes(page))page='calculator';
+  for(const name of ['calculator','saved','reference']){
+    $('page-'+name).hidden=name!==page;
+  }
+  document.querySelectorAll('.nav button').forEach(b=>{
+    const active=b.dataset.page===page;
+    b.classList.toggle('selected',active);
+    if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
+  });
+  window.scrollTo(0,0);
+}
+$('nextSaved').addEventListener('click',()=>showPage('saved'));
+$('nextReference').addEventListener('click',()=>showPage('reference'));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
 document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 let installPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('install').hidden=false});$('install').addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('install').hidden=true});window.addEventListener('appinstalled',()=>{$('install').hidden=true;status('App installed.')});
 if('serviceWorker' in navigator&&location.protocol!=='file:')window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
