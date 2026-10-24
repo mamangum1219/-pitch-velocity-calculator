@@ -1,2 +1,1 @@
-SWIPE NAVIGATION v11
-Upload all files and the icons folder to the GitHub repository root, replacing old files. Swipe left/right between Calculator, Saved, Swing Timing, and Reference. Sliders still work normally. The page indicator at the bottom shows the current page.
+Version 12: Swipe left/right on any non-control area to move through all four pages. Footer dots can also be tapped. Upload all files and icons to GitHub Pages repository root. After deployment open ?v=12. If stale, close/reopen installed app.
