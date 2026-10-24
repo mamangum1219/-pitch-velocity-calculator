@@ -1,2 +1,1 @@
-BAT SPEED UPDATE v9
-Adds ESTIMATED BAT SPEED NEEDED: 55–65 MPH as an illustrative training target for a 14-year-old. This is not calculated from pitch speed and is not a minimum required to hit. Preserves saved settings and navigation. Upload the contents to your GitHub Pages repository root. After deployment open your site with ?v=9 and refresh.
+Pitch Velocity Calculator v10 — Swing Timing fourth page. Upload ALL files and the icons folder to your GitHub Pages repository root, replacing older versions. Visit your site with ?v=10 after deployment. Swing duration defaults to 0.180 sec; Loading Phase means time before swing initiation, not measured mechanical loading. Existing saved settings remain stored under the original localStorage key.
