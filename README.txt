@@ -1,1 +1,2 @@
-Pitch Velocity Calculator v10 — Swing Timing fourth page. Upload ALL files and the icons folder to your GitHub Pages repository root, replacing older versions. Visit your site with ?v=10 after deployment. Swing duration defaults to 0.180 sec; Loading Phase means time before swing initiation, not measured mechanical loading. Existing saved settings remain stored under the original localStorage key.
+SWIPE NAVIGATION v11
+Upload all files and the icons folder to the GitHub repository root, replacing old files. Swipe left/right between Calculator, Saved, Swing Timing, and Reference. Sliders still work normally. The page indicator at the bottom shows the current page.
