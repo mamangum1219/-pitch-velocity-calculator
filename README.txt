@@ -1,1 +1,7 @@
-Version 12: Swipe left/right on any non-control area to move through all four pages. Footer dots can also be tapped. Upload all files and icons to GitHub Pages repository root. After deployment open ?v=12. If stale, close/reopen installed app.
+PITCH VELOCITY CALCULATOR v13 — FIVE SWIPE PAGES
+
+Upload all extracted files and icons/ to the ROOT of your GitHub Pages repository, replacing older files. Do not upload the ZIP itself.
+
+New fifth page: Exit Velocity Estimator. Swipe left from Reference to reach it, or use the fifth page indicator dot. Uses the screenshot-provided formula; this is not a validated maximum exit velocity prediction.
+
+The offline service-worker cache version is updated. Refresh after GitHub Pages deploys. Saved settings remain on the same localStorage key.
