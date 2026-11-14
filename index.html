@@ -112,14 +112,18 @@ $('reset').addEventListener('click',updateTiming);$('resetTop').addEventListener
 function updateExitVelocity(){
  const w=Number($('evWeight').value),ft=Number($('evFeet').value),inch=Number($('evInches').value),target=Number($('evTarget').value);
  const ok=[$('evWeight'),$('evFeet'),$('evInches'),$('evTarget')].every(el=>el.value.trim()!=='')&&[w,ft,inch,target].every(Number.isFinite)&&w>=40&&w<=400&&ft>=0&&ft<=20&&Number.isInteger(ft)&&inch>=0&&inch<12&&target>0&&target<=150;
- if(!ok){const allZero=['evWeight','evFeet','evInches','evTarget'].every(id=>Number($(id).value)===0);$('evResult').textContent=allZero?'0.0':'—';$('evJumpLabel').textContent=allZero?'Enter player measurements':'Enter valid measurements';$('evTargetDisplay').textContent=allZero?'0.0':'—';$('evNeededJump').textContent=allZero?'0′ 0″':'—';$('evReferenceRows').replaceChildren();return;}
+ if(!ok){const allZero=['evWeight','evFeet','evInches','evTarget'].every(id=>Number($(id).value)===0);$('evResult').textContent=allZero?'0.0':'—';$('evJumpLabel').textContent=allZero?'Enter player measurements':'Enter valid measurements';$('evTargetDisplay').textContent=allZero?'0.0':'—';$('evNeededJump').textContent=allZero?'0′ 0″':'—';renderBroadJumpReference(w);return;}
  const jump=ft*12+inch,estimated=23.6+.14*w+.30*jump;
  $('evResult').textContent=estimated.toFixed(1);
  $('evJumpLabel').textContent=w+' lbs • '+ft+' ft '+inch+' in broad jump';
  $('evTargetDisplay').textContent=target.toFixed(1);
  const needed=(target-23.6-.14*w)/.30;
  $('evNeededJump').textContent=needed<0?'0′ 0″':Math.floor(needed/12)+'′ '+Math.round((needed%12)*10)/10+'″';
+ renderBroadJumpReference(w);
+}
+function renderBroadJumpReference(w){
  const tbody=$('evReferenceRows');tbody.replaceChildren();
+ if(!Number.isFinite(w)||w<40||w>400)return;
  for(const inches of [96,108,114,120,126,129]){
   const tr=document.createElement('tr');const label=document.createElement('td');const value=document.createElement('td');
   label.textContent=Math.floor(inches/12)+' ft '+(inches%12)+' in';value.textContent=(23.6+.14*w+.30*inches).toFixed(1)+' MPH';tr.append(label,value);tbody.append(tr);
