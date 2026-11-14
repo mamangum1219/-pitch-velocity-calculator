@@ -7,3 +7,5 @@ New fifth page: Exit Velocity Estimator. Swipe left from Reference to reach it, 
 The offline service-worker cache version is updated. Refresh after GitHub Pages deploys. Saved settings remain on the same localStorage key.
 
 Version 14: Exit Velocity Estimator inputs and outputs start at zero. Enter player weight, jump and target to calculate.
+
+Version 15: Updated IMPORTANT text on Exit Velocity screen.
